@@ -2,19 +2,21 @@
 // Don't forget to add it into respective layouts where this js file is needed
 
 $(document).ready(function() {
-  AOS.init( {
-    // uncomment below for on-scroll animations to played only once
-    // once: true  
-  }); // initialize animate on scroll library
+  AOS.init({
+    once: true,
+    duration: 750,
+    easing: 'ease-out-cubic',
+    offset: 70
+  });
 });
 
 // Smooth scroll for links with hashes
-$('a.smooth-scroll')
+$('a.smooth-scroll, .navbar-brand[href^="#"]')
 .click(function(event) {
   // On-page links
   if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-    && 
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
     location.hostname == this.hostname
   ) {
     // Figure out element to scroll to
@@ -24,9 +26,10 @@ $('a.smooth-scroll')
     if (target.length) {
       // Only prevent default if animation is actually gonna happen
       event.preventDefault();
+      var navHeight = $('.ai-nav').outerHeight() || 56;
       $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000, function() {
+        scrollTop: Math.max(0, target.offset().top - navHeight)
+      }, 700, function() {
         // Callback after animation
         // Must change focus!
         var $target = $(target);
