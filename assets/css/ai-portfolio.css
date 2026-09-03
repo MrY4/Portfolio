@@ -727,6 +727,13 @@ body {
   box-shadow: 0 18px 50px rgba(102, 126, 234, 0.55);
 }
 
+.ai-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
 /* ---------- Footer ---------- */
 .ai-footer.footer {
   background: #050508 !important;
@@ -765,6 +772,89 @@ body {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 991px) {
+  .ai-nav.navbar,
+  .navbar.ai-nav {
+    padding: 8px 0 !important;
+  }
+
+  .ai-nav .container {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+  }
+
+  .ai-nav .navbar-translate {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ai-nav .navbar-toggler {
+    display: block;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .ai-nav .navbar-toggler-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 4px auto;
+    background: #fff;
+  }
+
+  .ai-nav .navbar-collapse,
+  .sidebar-collapse .ai-nav .navbar-collapse,
+  .profile-page .ai-nav .navbar-collapse {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    transform: none !important;
+    visibility: visible;
+    background: transparent !important;
+    overflow: visible !important;
+    padding: 10px 0 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 8px;
+  }
+
+  .ai-nav .navbar-collapse:before,
+  .sidebar-collapse .navbar-collapse:before {
+    display: none !important;
+  }
+
+  .ai-nav .modern-nav {
+    flex-direction: column;
+    flex-wrap: wrap;
+    white-space: normal;
+    width: 100%;
+    gap: 6px;
+    margin: 0 !important;
+  }
+
+  .ai-nav .modern-nav .nav-item,
+  .ai-nav .modern-nav .nav-link {
+    width: 100%;
+    margin: 0;
+  }
+
+  .ai-nav .modern-nav .nav-link {
+    justify-content: flex-start;
+    padding: 12px 14px !important;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  #bodyClick {
+    display: none !important;
+  }
+
   .ai-about-grid {
     grid-template-columns: 1fr;
   }
@@ -785,6 +875,24 @@ body {
 
   .ai-section {
     padding: 70px 0;
+  }
+
+  .ai-contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ai-contact-cta {
+    width: 100%;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 14px 18px;
+  }
+
+  .ai-contact-item .value {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 0.92rem;
   }
 }
 
